@@ -17,7 +17,7 @@ Nasa Liquor Store is local mom and pop liqour store located on the south side Ho
 
 
 ## Component Hierarchy Diagram
-![Component Hierarchy Diagram](https://i.imgur.com/cFKyN6l.png)
+![Component Hierarchy Diagram](https://i.imgur.com/UUySg4t.png)
 
 ## Technologies Used
 - Postgresql
