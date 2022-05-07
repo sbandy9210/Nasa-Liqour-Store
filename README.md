@@ -26,6 +26,7 @@ Nasa Liquor Store is local mom and pop liqour store located on the south side Ho
 - Node
 - Trello
 - Lucid 
+- Figma
 
 ## Links
 
@@ -34,5 +35,7 @@ Nasa Liquor Store is local mom and pop liqour store located on the south side Ho
 [Component Heirarchy](https://app.diagrams.net/#G1aOfI8gHHGiXaJHe-qupZQWDn9ud9lMQ1)
 
 [Trello](https://trello.com/b/fI2ZXHJo/project-4) 
+
+[Figma](https://www.figma.com/file/VpQGfbVhbTJPEU3R8FbJ7k/project-4?node-id=0%3A1)
 
 
