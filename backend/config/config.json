@@ -1,6 +1,6 @@
 {
   "development": {
-    "database": "nasa_liqour_database",
+    "database": "nasa_liquor_database",
     "host": "127.0.0.1",
     "dialect": "postgres",
     "password": "Puppina17"
