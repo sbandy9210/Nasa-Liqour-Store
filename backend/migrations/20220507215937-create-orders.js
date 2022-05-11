@@ -8,9 +8,6 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      id: {
-        type: Sequelize.INTEGER
-      },
       brand: {
         type: Sequelize.STRING
       },
@@ -23,6 +20,26 @@ module.exports = {
       stock: {
         type: Sequelize.BOOLEAN
       },
+      owner_id: {
+        onDelete: 'CASCADE',
+        onUpdate: 'CASCADE',
+        type: Sequelize.INTEGER,
+        references: {
+          model: 'owners',
+          key: 'id'
+        }
+  
+      },
+      vendor_id: {
+        onDelete: 'CASCADE',
+        onUpdate: 'CASCADE',
+        type: Sequelize.INTEGER,
+        references: {
+          model: 'vendors',
+          key: 'id'
+        }
+  
+      }, 
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE

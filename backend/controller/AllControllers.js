@@ -1,13 +1,13 @@
-const { Orders, Owner, Vendor } = require('../models')
+const { Order, Owner, Vendor, Product } = require('../models')
 const { sequelize } = require('sequelize')
 
 
 // %%%%%%%%%%%%%%%%% ORDER CONTROLLERS %%%%%%%%%%%%%%%
 const getAllOrders = async (req, res) => {
     try {
-        const order = await Orders.findAll()
+        const order = await Order.findAll()
         res.send(order)
-    }catch (error) {
+    } catch (error) {
         throw error
     }
 
@@ -15,12 +15,12 @@ const getAllOrders = async (req, res) => {
 
 const updateOrder = async (req, res) => {
     try {
-        const order = await Orders.update(
+        const order = await Order.update(
             {...req.body},
-            {where: {id: req.params.order_id}, returning: true}
+            {where: {id: req.params.orders_id}, returning: true}
         )
         res.send(order)
-    }catch (error){
+    } catch (error){
         throw error
     }
 
@@ -28,8 +28,8 @@ const updateOrder = async (req, res) => {
 
 const createOrder = async (req, res) => {
     try {
-        const order = await Orders.create({...req.body})
-        res.send(order)
+        const order = await Order.create({...req.body})
+        res.send({msg:'Order Created'})
     } catch (error) {
         throw(error)
     }
@@ -38,8 +38,8 @@ const createOrder = async (req, res) => {
 
 const deleteOrder = async (req, res) => {
     try {
-        await Orders.destroy({ where: {id: req.params.order_id} })
-        res.send({ msg: 'Order deleted', payload: req.params.orders_id, status: 'OK'})
+        await orders.destroy({ where: {id: req.params.order_id} })
+        res.send({ msg: 'Order deleted', payload: req.params.order_id, status: 'OK'})
     } catch (error) {
         throw error
     }
@@ -49,9 +49,9 @@ const deleteOrder = async (req, res) => {
 // %%%%%%%%%%%%% OWNER CONTROLLERS %%%%%%%%%%%%%%%%%%%%%
 const getAllOwners = async (req, res) => {
     try {
-        const owner = await Owners.findAll()
+        const owner = await Owner.findAll()
         res.send(owner)
-    }catch (error) {
+    } catch (error) {
         throw error
     }
 
@@ -59,12 +59,12 @@ const getAllOwners = async (req, res) => {
 
 const updateOwner = async (req, res) => {
     try {
-        const owner = await Owners.update(
+        const owner = await Owner.update(
             {...req.body},
-            {where: {id: req.params.order_id}, returning: true}
+            {where: {id: req.params.owner_id}, returning: true}
         )
         res.send(owner)
-    }catch (error){
+    } catch (error){
         throw error
     }
 
@@ -72,7 +72,7 @@ const updateOwner = async (req, res) => {
 
 const createOwner = async (req, res) => {
     try {
-        const owner = await Owners.create({...req.body})
+        const owner = await Owner.create({...req.body})
         res.send(owner)
     } catch (error) {
         throw(error)
@@ -82,8 +82,8 @@ const createOwner = async (req, res) => {
 
 const deleteOwner = async (req, res) => {
     try {
-        await Owners.destroy({ where: {id: req.params.order_id} })
-        res.send({ msg: 'Owner deleted', payload: req.params.owners_id, status: 'OK'})
+        await Owner.destroy({ where: {id: req.params.owner_id} })
+        res.send({ msg: 'Owner deleted', payload: req.params.owner_id, status: 'OK'})
     } catch (error) {
         throw error
     }
@@ -94,9 +94,9 @@ const deleteOwner = async (req, res) => {
 
 const getAllVendors = async (req, res) => {
     try {
-        const  vendor = await Vendors.findAll()
+        const  vendor = await Vendor.findAll()
         res.send(vendor)
-    }catch (error) {
+    } catch (error) {
         throw error
     }
 
@@ -104,12 +104,12 @@ const getAllVendors = async (req, res) => {
 
 const updateVendor = async (req, res) => {
     try {
-        const order = await Vendors.update(
+        const vendor = await Vendor.update(
             {...req.body},
-            {where: {id: req.params.order_id}, returning: true}
+            {where: {id: req.params.vendor_id}, returning: true}
         )
         res.send(vendor)
-    }catch (error){
+    } catch (error){
         throw error
     }
 
@@ -117,7 +117,7 @@ const updateVendor = async (req, res) => {
 
 const createVendor = async (req, res) => {
     try {
-        const vendor = await Vendors.create({...req.body})
+        const vendor = await Vendor.create({...req.body})
         res.send(vendor)
     } catch (error) {
         throw(error)
@@ -127,15 +127,59 @@ const createVendor = async (req, res) => {
 
 const deleteVendor = async (req, res) => {
     try {
-        await Vendors.destroy({ where: {id: req.params.order_id} })
-        res.send({ msg: 'Order deleted', payload: req.params.vendors_id, status: 'OK'})
+        await Vendors.destroy({ where: {id: req.params.vendor_id} })
+        res.send({ msg: 'Order deleted', payload: req.params.vendor_id, status: 'OK'})
     } catch (error) {
         throw error
     }
 
 }
 
-modules.exports = {
+// %%%%%%%%%%%% PRODUCTS CONTROLLERS %%%%%%%%%%%%%%%%%%%%
+const getAllProducts = async (req, res) => {
+    try {
+        const  product = await Product.findAll()
+        res.send(product)
+    } catch (error) {
+        throw error
+    }
+
+}
+
+const updateProduct = async (req, res) => {
+    try {
+        const product = await Product.update(
+            {...req.body},
+            {where: {id: req.params.product_id}, returning: true}
+        )
+        res.send(product)
+    } catch (error){
+        throw error
+    }
+
+}
+
+const createProduct = async (req, res) => {
+    try {
+        const product = await Product.create({...req.body})
+        res.send(product)
+    } catch (error) {
+        throw(error)
+    }
+
+}
+
+const deleteProduct = async (req, res) => {
+    try {
+        await Products.destroy({ where: {id: req.params.product_id} })
+        res.send({ msg: 'Product deleted', payload: req.params.product_id, status: 'OK'})
+    } catch (error) {
+        throw error
+    }
+
+}
+
+module.exports = {
     getAllOrders,
     updateOrder,
     createOrder,
@@ -147,5 +191,9 @@ modules.exports = {
     getAllVendors,
     updateVendor,
     createVendor,
-    deleteVendor
+    deleteVendor,
+    getAllProducts,
+    updateProduct,
+    createProduct,
+    deleteProduct
 }

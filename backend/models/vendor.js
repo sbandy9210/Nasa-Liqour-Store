@@ -11,7 +11,7 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
-      Vendor.hasMany(models.Orders, {
+      Vendor.hasMany(models.Order, {
         foreignKey: 'vendor_id',
         onDelete: 'CASCADE',
         onUpdate: 'CASCADE'
@@ -25,7 +25,10 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   Vendor.init({
-    id: DataTypes.INTEGER,
+    id: {
+    type: DataTypes.INTEGER,
+    primaryKey: true
+  },
     username: DataTypes.STRING,
     password: DataTypes.STRING,
     owner_id: {
@@ -39,7 +42,7 @@ module.exports = (sequelize, DataTypes) => {
   }, {
     sequelize,
     modelName: 'Vendor',
-    tableName: 'vendor'
+    tableName: 'vendors'
   });
   return Vendor;
 };

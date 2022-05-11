@@ -20,6 +20,15 @@ module.exports = {
       stock: {
         type: Sequelize.BOOLEAN
       },
+      order_id: {
+        onDelete: 'CASCADE',
+        onUpdate: 'CASCADE',
+        type: Sequelize.INTEGER,
+        references: {
+          model: 'orders',
+          key: 'id'
+        }
+      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE

@@ -21,8 +21,8 @@ module.exports = (sequelize, DataTypes) => {
         onDelete: 'CASCADE',
         onUpdate: 'CASCADE'
       })
-      Orders.hasMany(models.Products, {
-        foreignKey: 'products_id',
+      Orders.hasMany(models.Product, {
+        foreignKey: 'productID',
         onDelete: 'CASCADE',
         onUpdate: 'CASCADE'
 
@@ -30,10 +30,14 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   Orders.init({
-    id: DataTypes.INTEGER,
+    id: {
+      type: DataTypes.INTEGER,
+      primaryKey: true,
+    },
     brand: DataTypes.STRING,
     image: DataTypes.STRING,
     stock: DataTypes.BOOLEAN,
+    
     quantity: {
       type: DataTypes.INTEGER,
       defaultValue: 0,
@@ -42,21 +46,22 @@ module.exports = (sequelize, DataTypes) => {
     owner_id: {
       type: DataTypes.INTEGER,
       references: {
-        model: 'owner',
+        model: 'owners',
         key: 'id'
+        
       }
     },
     vendor_id: {
       type: DataTypes.INTEGER,
       references: {
-        model: 'vendor',
+        model: 'vendors',
         key: 'id'
       }
     }
   }, 
   {
     sequelize,
-    modelName: 'Orders',
+    modelName: 'Order',
     tableName: 'orders'
   });
   return Orders;

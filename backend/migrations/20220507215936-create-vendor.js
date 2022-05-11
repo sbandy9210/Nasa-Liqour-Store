@@ -8,15 +8,22 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      id: {
-        type: Sequelize.INTEGER
-      },
       username: {
         type: Sequelize.STRING
       },
       password: {
         type: Sequelize.STRING
       },
+      owner_id: {
+        onDelete: 'CASCADE',
+        onUpdate: 'CASCADE',
+        type: Sequelize.INTEGER,
+        references: {
+          model: 'owners',
+          key: 'id'
+        }
+  
+      }, 
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE

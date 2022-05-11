@@ -10,7 +10,7 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      Products.belongsTo(models.Orders, {
+      Products.belongsTo(models.Order, {
         foreignKey: 'orders_id',
         onDelete: 'CASCADE',
         onUpdate: 'CASCADE'
@@ -31,7 +31,7 @@ module.exports = (sequelize, DataTypes) => {
     }
   }, {
     sequelize,
-    modelName: 'Products',
+    modelName: 'Product',
     tableName: 'products'
   });
   return Products;

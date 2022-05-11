@@ -11,26 +11,30 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
-      Owner.hasMany(models.Orders, {
+      Owner.hasMany(models.Order, {
         foreignKey: 'owner_id',
         onDelete: 'CASCADE',
         onUpdate: 'CASCADE'
       })
-      Owner.hasMany(models.Vendors, {
+      Owner.hasMany(models.Vendor, {
         foreignKey: 'owner_id',
-        onDelete: 'CASCASDE',
+        onDelete: 'CASCADE',
         onUpdate: 'CASCADE'
       })
     }
   }
   Owner.init({
-    id: DataTypes.INTEGER,
+    id: {
+    type: DataTypes.INTEGER,
+    primaryKey: true,
+    
+  },
     username: DataTypes.STRING,
     password: DataTypes.STRING
   }, {
     sequelize,
     modelName: 'Owner',
-    tableName: 'owner'
+    tableName: 'owners'
   });
   return Owner;
 };
