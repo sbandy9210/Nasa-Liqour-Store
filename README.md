@@ -1,9 +1,9 @@
-# Nasa-Liqour-Store
+# Nasa-Liquor-Store
 
 ### Created By: Shubhro Bandyopadhyay [LinkedIn](https://www.linkedin.com/in/shubhro-bandyopadhyay-8420a321b/) [Github](https://github.com/sbandy9210) 
  
 
-## Desprciption
+## Description
 
 Nasa Liquor Store is local mom and pop liqour store located on the south side Houston about 5 minutes away from NASA. I got the idea to create this website for the owner after finding out they did not have a way to keep track of their inventory in a efficeint manor. I decided to put my skills to the test and create this site to help them out.
 
@@ -12,7 +12,7 @@ Nasa Liquor Store is local mom and pop liqour store located on the south side Ho
 
 
 ## Entity Relationship Diagram (ERD)
-![ERD](https://i.imgur.com/B6O2UP7.png)
+![ERD](https://i.imgur.com/0Mbx6s2.png)
 
 
 
