@@ -23,11 +23,11 @@ Router.delete('owner/delete/:owner_id', middleware.stripToken, middleware.verify
 
 
 // %%%%%%%%%%%%%% VENDOR ROUTE %%%%%%%%%%%%%%%%%%%%%%%%
-Router.get('/vendor', controller.getAllVendors)
+// Router.get('/vendor', controller.getAllVendors)
 
 Router.put('/vendor/update', middleware.stripToken, middleware.verifyToken, controller.updateVendor)
 
-Router.post('/vendor/create', middleware.stripToken, middleware.verifyToken, controller.createVendor)
+// Router.post('/vendor/create', middleware.stripToken, middleware.verifyToken, controller.createVendor)
 
 Router.delete('/vendor/delete/:vendor_id', middleware.stripToken, middleware.verifyToken, controller.deleteVendor)
 

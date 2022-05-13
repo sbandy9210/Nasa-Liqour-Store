@@ -171,7 +171,7 @@ const createProduct = async (req, res) => {
 
 const deleteProduct = async (req, res) => {
     try {
-        await Products.destroy({ where: {id: req.params.product_id} })
+        await Product.destroy({ where: {id: req.params.product_id} })
         res.send({ msg: 'Product deleted', payload: req.params.product_id, status: 'OK'})
     } catch (error) {
         throw error

@@ -10,6 +10,8 @@ const SignInUser = async (data) => {
     }
 }
 
+
+
 const RegisterUser = async (data) => {
     try {
         const res = await Client.post('./api/register', data)
@@ -18,6 +20,8 @@ const RegisterUser = async (data) => {
         throw error
     }
 }
+
+
 
 const CheckSession = async () => {
     try {

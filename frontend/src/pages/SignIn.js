@@ -24,7 +24,7 @@ const SignIn = (props) => {
         props.setUser(payload)
         props.setUserID(payload.id)
         props.setAuthenticated(true)
-        navigate('/')
+        navigate('/products')
     }
 
 
@@ -41,7 +41,7 @@ const SignIn = (props) => {
                     />
                     <br/>
                 </div>
-                <button className='signInButton' type='submit' disabled={!formValues.username || !formValues.password}> Sign In 
+                <button className='signInButton' type='submit' onClick={handleSubmit}disabled={!formValues.username || !formValues.password}> Sign In 
                 </button>
 
             </form>
