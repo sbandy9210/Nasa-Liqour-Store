@@ -2,7 +2,8 @@
 import React, { useState, useEffect } from 'react'
 // import Client from '../services/api'
 import axios from 'axios'
-import buffalo from './images/buffalotrace.jpg'
+
+
 
 const Products = () => {
 
@@ -38,13 +39,14 @@ const Products = () => {
     return (
         <div className='Products'>
             <div>
-                <h2>All Products</h2>
+                <h2>Products</h2>
             </div>
 
             {products.map((products) => ( 
                 <div key={products.id}>
                     <h1>{products.brand}</h1>
-                    <img src={buffalo} alt="this is a bottle of buffalo trace"/>
+                    <img src={products.image} alt='whiskey' style={{maxWidth: '100%'}}/> 
+                  
                     
                 </div>
 
