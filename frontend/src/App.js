@@ -1,7 +1,7 @@
 import './styles/app.css'
 import React, { useState, UseEffect } from 'react'
 import { Route, Routes } from 'react-router-dom' 
-import Client from './services/api'
+// import Client from './services/api'
 import SignIn from './pages/SignIn'
 import Register from './pages/Register'
 import Products from './pages/Products'

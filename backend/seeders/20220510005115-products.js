@@ -8,7 +8,7 @@ module.exports = {
         {
           productID: 1,
           brand: 'Buffalo Trace',
-          image: 'https://i1.wp.com/drinkhacker.com/wp-content/uploads/2019/07/buffalo-trace-caskers.jpg',
+          image: 'https://i.imgur.com/fj4emtY.jpg',
           stock: true,
           createdAt: new Date(),
           updatedAt: new Date()

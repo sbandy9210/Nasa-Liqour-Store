@@ -1,6 +1,8 @@
+// import '../assets'
 import React, { useState, useEffect } from 'react'
 // import Client from '../services/api'
 import axios from 'axios'
+import buffalo from './images/buffalotrace.jpg'
 
 const Products = () => {
 
@@ -8,6 +10,7 @@ const Products = () => {
      
     const [products, getProducts] = useState()
     const [loading, setLoading] = useState(true)
+    
 
    
 
@@ -15,8 +18,9 @@ const Products = () => {
 
     const allProducts = async () => {
         let res = await axios.get(`${BASE_URL}/api/products`)
-        getProducts(res.data.products)
-        console.log(res)
+        getProducts(res.data)
+        console.log(res.data)
+        
         // setLoading(false)
     }
 
@@ -40,6 +44,8 @@ const Products = () => {
             {products.map((products) => ( 
                 <div key={products.id}>
                     <h1>{products.brand}</h1>
+                    <img src={buffalo} alt="this is a bottle of buffalo trace"/>
+                    
                 </div>
 
             )
