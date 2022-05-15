@@ -20,7 +20,7 @@ const Products = () => {
     const allProducts = async () => {
         let res = await axios.get(`${BASE_URL}/api/products`)
         getProducts(res.data)
-        console.log(res.data)
+        // console.log(res.data)
         
         // setLoading(false)
     }
@@ -39,7 +39,7 @@ const Products = () => {
     return (
         <div className='Products'>
             <div>
-                <h2>Products</h2>
+                <h2>Inventory</h2>
             </div>
 
             {products.map((products) => ( 

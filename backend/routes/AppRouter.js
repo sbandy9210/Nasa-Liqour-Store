@@ -5,7 +5,7 @@ const middleware = require('../middleware')
 // %%%%%%%%%%%%%% ORDER ROUTE %%%%%%%%%%%%%%%%%%%%%%%%
 Router.get('/orders', controller.getAllOrders)
 
-Router.put('/order/update', middleware.stripToken, middleware.verifyToken, controller.updateOrder)
+Router.put('/updateOrder', middleware.stripToken, middleware.verifyToken, controller.updateOrder)
 
 Router.post('/order/create', middleware.stripToken, middleware.verifyToken, controller.createOrder)
 

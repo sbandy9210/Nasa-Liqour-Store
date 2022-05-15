@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react'
 import axios from 'axios'
+import UpdateOrder from '../components/UpdateOrder'
 
 
 const Orders = () => {
@@ -34,6 +35,8 @@ const Orders = () => {
                 {orders.map((orders) => ( 
                     <div key={orders.id}>
                         <h1>{orders.brand}</h1>
+                        {/* <img src={orders.image} alt='whiskey' style={{maxWidth: '100%'}}/>  */}
+                        <UpdateOrder updateOrder={orders._id}/>
                      
                     </div>
     
