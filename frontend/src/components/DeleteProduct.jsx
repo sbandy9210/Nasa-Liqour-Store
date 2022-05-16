@@ -20,7 +20,7 @@ const DeleteProduct = ({id}) => {
 
     return (
         <div>
-            <button onClick={() => handleDelete()}>
+            <button className='deleteButton' onClick={() => handleDelete()}>
                 Delete this product.
             </button>
 

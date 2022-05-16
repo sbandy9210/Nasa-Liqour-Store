@@ -1,41 +1,45 @@
 import React from 'react'
 import axios from 'axios'
 import { useState } from 'react'
-// import { useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 
 
-const UpdateProduct = ({updateProduct}) => {
+const UpdateProduct = (props) => {
 
-    // const navigate = useNavigate()
+    const navigate = useNavigate()
+    
 
     const BASE_URL = 'http://localhost:3001/api'
 
     const [update, setUpdate] = useState(false)
-    const [quantity, setQuantity] = useState({
-        quantity: ''
-    })
-    
-    const handleChange = (event) => {
-        setQuantity({...quantity, [event.target.name]: event.target.value})
+    const [brand, setBrand] = useState('')
+    const [image, setImage] = useState('')
+      
 
-
-    }
-    const handleSubmit = async (e) => {
+    const UpdateProduct = async (e) => {
         e.preventDefault()
-        await axios.put(`${BASE_URL}/updateProduct/${updateProduct}`,{
-            quantity: quantity
+        await axios.put(`${BASE_URL}/products/${props.id}`, { 
+            brand: brand,
+            image: image
+
+          
         })
         window.location.reload(true)
     }
 
+        
+    
+    
 
     return (
         <div className='updateProduct'>
             {update ? 
-                <form onSubmit={handleSubmit}>
-                    <input onChange={handleChange} type='integer' id={'quantity'} name={'quantity'} placeholder={'quantity'}/>
+                <form onSubmit={(e) => UpdateProduct(e)}>
+                    <input onChange={(e) => setBrand(e.target.value)} type='text' id={'brand'} name={'brand'} placeholder='brand'/>
 
-                    <button className='update-button'>submit</button>
+                    <input onChange={(e) => setImage(e.target.value)} type='text' id={'image'} name={'image'} placeholder='image'/>
+
+                    <button className='update-button'>update</button>
 
                 </form>:
                 <button className='updateButton' onClick={() => setUpdate(true)}>Update</button>
@@ -46,3 +50,5 @@ const UpdateProduct = ({updateProduct}) => {
     )
 }
 export default UpdateProduct
+
+

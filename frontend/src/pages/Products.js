@@ -50,8 +50,8 @@ const Products = () => {
                 <div key={product.id}>
                     <h1>{product.brand}</h1>
                     <h2></h2>
-                    <img src={product.image} alt='liquor' style={{maxWidth: '100%'}}/>
-                    <UpdateProduct updateProduct={products.image}/>
+                    <img className='images' src={product.image} alt='liquor' style={{maxWidth: '100%'}}/>
+                    <UpdateProduct id={product.id}/>
                     <DeleteProduct id={product.id}/> 
                   
                     

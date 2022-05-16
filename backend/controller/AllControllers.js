@@ -148,9 +148,10 @@ const GetAllProducts = async (req, res) => {
 
 const UpdateProduct = async (req, res) => {
     try {
-        const product = await Product.update(
+        const product = await Product.findByPk(req.params.id)
+        product.update(
             {...req.body},
-            {where: {id: req.params.product_id}, returning: true}
+            {where: {id: req.params.id}, returning: true}
         )
         res.send(product)
     } catch (error){
@@ -179,13 +180,7 @@ const DeleteProduct = async (req, res) => {
         throw error
     }
 
-    // try {
-    //     const del = parseInt(req.params.product.ID)
-    //     const deleteProduct = await Product.destroy({ where: {ID: del}}) 
-    //     res.send({msg: `The product has been deleted`}) 
-    // } catch (error) {
-    //     throw error
-    // }
+    
 
 }
 

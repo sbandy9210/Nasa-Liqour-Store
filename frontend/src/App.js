@@ -7,14 +7,15 @@ import Register from './pages/Register'
 import Products from './pages/Products'
 import Orders from './pages/Orders'
 import Nav from './components/Nav'
+import Home from './pages/Home'
 
 
 function App() {
   return (
     <div className="App">
       <div className='App-header'>
-        <header className>
-        <h1>NASA LIQUOR STORE</h1>
+        <header className='navBar'>
+      
         <Nav />
         </header>
 
@@ -24,6 +25,7 @@ function App() {
           <Route path='/orders' element={<Orders/>}/>
           <Route path='/register' element={<Register/>}/>
           <Route path='/products' element={<Products/>}/>
+          <Route path='/home' element={<Home/>}/>
         </Routes>
         
        

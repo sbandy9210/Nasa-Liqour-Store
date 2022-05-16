@@ -1,0 +1,45 @@
+
+.homePage {
+    text-align: center;
+
+}
+
+.homeTitle{
+    text-align: center;
+
+}
+
+.navOrders {
+    margin-right: 10px;
+    font-size: 25px;
+
+}
+
+.navProducts {
+    margin-right: 10px;
+    font-size: 25px;
+}
+
+.navHome {
+    margin-right: 10px;
+    font-size: 25px;
+
+}
+
+.deleteButton {
+    flex: row;
+}
+.updateButton {
+    justify-content: center;
+    font-size: 14px;
+}
+
+.images {
+    height: 150px;
+    width: 150px;
+    justify-content: center;
+}
+
+.brand {
+    
+}
