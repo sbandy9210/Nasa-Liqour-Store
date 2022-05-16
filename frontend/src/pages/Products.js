@@ -2,7 +2,10 @@
 import React, { useState, useEffect } from 'react'
 // import Client from '../services/api'
 import axios from 'axios'
-
+import Orders from './Orders'
+import DeleteProduct from '../components/DeleteProduct'
+import CreateProduct from '../components/CreateProduct'
+import UpdateOrder from '../components/UpdateOrder'
 
 
 const Products = () => {
@@ -11,6 +14,7 @@ const Products = () => {
      
     const [products, getProducts] = useState()
     const [loading, setLoading] = useState(true)
+    
     
 
    
@@ -42,16 +46,20 @@ const Products = () => {
                 <h2>Inventory</h2>
             </div>
 
-            {products.map((products) => ( 
-                <div key={products.id}>
-                    <h1>{products.brand}</h1>
-                    <img src={products.image} alt='whiskey' style={{maxWidth: '100%'}}/> 
+            {products.map((product) => ( 
+                <div key={product.id}>
+                    <h1>{product.brand}</h1>
+                    <h2></h2>
+                    <img src={product.image} alt='whiskey' style={{maxWidth: '100%'}}/>
+                    <UpdateOrder updateOrder={products.id}/>
+                    <DeleteProduct id={product.id}/> 
                   
                     
                 </div>
 
             )
             )}
+             <CreateProduct createProduct={products.id}/>
 
            
             

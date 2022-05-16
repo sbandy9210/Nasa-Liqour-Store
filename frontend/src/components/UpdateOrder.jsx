@@ -1,20 +1,26 @@
 import React from 'react'
 import axios from 'axios'
 import { useState } from 'react'
-import { useNavigate } from 'react-router-dom'
+// import { useNavigate } from 'react-router-dom'
 
 
-function UpdateOrder({updateOrder}) {
+const UpdateOrder = ({updateOrder}) => {
 
-    const navigate = useNavigate()
+    // const navigate = useNavigate()
 
     const BASE_URL = 'http://localhost:3001/api'
 
     const [update, setUpdate] = useState(false)
-    const [quantity, setQuantity] = useState('')
+    const [quantity, setQuantity] = useState({
+        quantity: ''
+    })
     
+    const handleChange = (event) => {
+        setQuantity({...quantity, [event.target.name]: event.target.value})
 
-    const newOrder = async (e) => {
+
+    }
+    const handleSubmit = async (e) => {
         e.preventDefault()
         await axios.put(`${BASE_URL}/updateOrder/${updateOrder}`,{
             quantity: quantity
@@ -26,10 +32,10 @@ function UpdateOrder({updateOrder}) {
     return (
         <div className='updateOrder'>
             {update ? 
-                <form onSubmit={(e) => newOrder(e)}>
-                    <input onChange={(e) => setQuantity(e.target.value)} type='integer' id={'quantity'} name={'quantity'} placeholder={'quantity'}/>
+                <form onSubmit={handleSubmit}>
+                    <input onChange={handleChange} type='integer' id={'quantity'} name={'quantity'} placeholder={'quantity'}/>
 
-                    <button className='update-button' onClick={() => navigate(`/products`)}>submit</button>
+                    <button className='update-button'>submit</button>
 
                 </form>:
                 <button className='updateButton' onClick={() => setUpdate(true)}>Update</button>

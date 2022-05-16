@@ -6,7 +6,7 @@ import SignIn from './pages/SignIn'
 import Register from './pages/Register'
 import Products from './pages/Products'
 import Orders from './pages/Orders'
-// import Nav from './components/Nav'
+import Nav from './components/Nav'
 
 
 function App() {
@@ -15,7 +15,7 @@ function App() {
       <div className='App-header'>
         <header className>
         <h1>NASA LIQUOR STORE</h1>
-        {/* <Nav /> */}
+        <Nav />
         </header>
 
       </div>

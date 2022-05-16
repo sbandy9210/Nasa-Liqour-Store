@@ -33,13 +33,13 @@ Router.delete('/vendor/delete/:vendor_id', middleware.stripToken, middleware.ver
 
 
 // %%%%%%%%%%%%%% PRODUCTS ROUTE %%%%%%%%%%%%%%%%%%%%%%%%
-Router.get('/products', controller.getAllProducts)
+Router.get('/products', controller.GetAllProducts)
 
-Router.put('/products/update', middleware.stripToken, middleware.verifyToken, controller.updateProduct)
+Router.put('/products/update', middleware.stripToken, middleware.verifyToken, controller.UpdateProduct)
 
-Router.post('products/create', middleware.stripToken, middleware.verifyToken, controller.createProduct)
+Router.post('/products/create', middleware.stripToken, middleware.verifyToken, controller.CreateProduct)
 
-Router.delete('products/delete/:delete_id', middleware.stripToken, middleware.verifyToken, controller.deleteProduct)
+Router.delete('/products/:id', controller.DeleteProduct)
 
 
 // %%%%%%%%%%%%%% AUTHENTICATION ROUTE %%%%%%%%%%%%%%%%%%

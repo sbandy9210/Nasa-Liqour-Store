@@ -136,7 +136,7 @@ const deleteVendor = async (req, res) => {
 }
 
 // %%%%%%%%%%%% PRODUCTS CONTROLLERS %%%%%%%%%%%%%%%%%%%%
-const getAllProducts = async (req, res) => {
+const GetAllProducts = async (req, res) => {
     try {
         const  product = await Product.findAll()
         res.send(product)
@@ -146,7 +146,7 @@ const getAllProducts = async (req, res) => {
 
 }
 
-const updateProduct = async (req, res) => {
+const UpdateProduct = async (req, res) => {
     try {
         const product = await Product.update(
             {...req.body},
@@ -159,7 +159,7 @@ const updateProduct = async (req, res) => {
 
 }
 
-const createProduct = async (req, res) => {
+const CreateProduct = async (req, res) => {
     try {
         const product = await Product.create({...req.body})
         res.send(product)
@@ -169,13 +169,23 @@ const createProduct = async (req, res) => {
 
 }
 
-const deleteProduct = async (req, res) => {
+const DeleteProduct = async (req, res) => {
     try {
-        await Product.destroy({ where: {id: req.params.product_id} })
-        res.send({ msg: 'Product deleted', payload: req.params.product_id, status: 'OK'})
+        console.log(req.params)
+        await Product.destroy({ where: {id: req.params.id} })
+        res.send({ msg: 'Product deleted', payload: req.params.id, status: 'OK'})
     } catch (error) {
+        console.log(req.params)
         throw error
     }
+
+    // try {
+    //     const del = parseInt(req.params.product.ID)
+    //     const deleteProduct = await Product.destroy({ where: {ID: del}}) 
+    //     res.send({msg: `The product has been deleted`}) 
+    // } catch (error) {
+    //     throw error
+    // }
 
 }
 
@@ -192,8 +202,8 @@ module.exports = {
     updateVendor,
     createVendor,
     deleteVendor,
-    getAllProducts,
-    updateProduct,
-    createProduct,
-    deleteProduct
+    GetAllProducts,
+    UpdateProduct,
+    CreateProduct,
+    DeleteProduct
 }

@@ -1,6 +1,8 @@
 import React, {useState, useEffect} from 'react'
 import axios from 'axios'
-import UpdateOrder from '../components/UpdateOrder'
+// import UpdateOrder from '../components/UpdateOrder'
+// import CreateProduct from '../components/CreateProduct'
+// import DeleteProduct from '../components/DeleteProduct'
 
 
 const Orders = () => {
@@ -27,7 +29,7 @@ const Orders = () => {
 
     if (orders) {
         return (
-            <div className='Orderss'>
+            <div className='Orders'>
                 <div>
                     <h2> Orders</h2>
                 </div>
@@ -35,13 +37,19 @@ const Orders = () => {
                 {orders.map((orders) => ( 
                     <div key={orders.id}>
                         <h1>{orders.brand}</h1>
-                        {/* <img src={orders.image} alt='whiskey' style={{maxWidth: '100%'}}/>  */}
-                        <UpdateOrder updateOrder={orders._id}/>
+                        <h2>Current Order Amount: {orders.quantity}</h2>
+                        <img src={orders.image} alt='whiskey' style={{maxWidth: '100%'}}/> 
+                        {/* <UpdateOrder updateOrder={orders._id}/> */}
+                        {/* <DeleteProduct id={orders.id}/> */}
+                        
+                        
                      
                     </div>
     
                 )
                 )}
+                {/* <CreateProduct createProduct={orders._id}/> */}
+                
     
                
                 
