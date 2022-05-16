@@ -5,7 +5,7 @@ import axios from 'axios'
 import Orders from './Orders'
 import DeleteProduct from '../components/DeleteProduct'
 import CreateProduct from '../components/CreateProduct'
-import UpdateOrder from '../components/UpdateOrder'
+import UpdateProduct from '../components/UpdateProduct'
 
 
 const Products = () => {
@@ -50,8 +50,8 @@ const Products = () => {
                 <div key={product.id}>
                     <h1>{product.brand}</h1>
                     <h2></h2>
-                    <img src={product.image} alt='whiskey' style={{maxWidth: '100%'}}/>
-                    <UpdateOrder updateOrder={products.id}/>
+                    <img src={product.image} alt='liquor' style={{maxWidth: '100%'}}/>
+                    <UpdateProduct updateProduct={products.image}/>
                     <DeleteProduct id={product.id}/> 
                   
                     
@@ -59,7 +59,7 @@ const Products = () => {
 
             )
             )}
-             <CreateProduct createProduct={products.id}/>
+             <CreateProduct createProduct={products.brand}/>
 
            
             

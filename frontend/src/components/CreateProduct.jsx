@@ -17,7 +17,7 @@ const CreateProduct = () => {
     }
 
     const handleCreate = async (e) => {
-        await axios.put(`${BASE_URL}/addProduct`, form)
+        await axios.post(`${BASE_URL}/products/create`, form)
         e.preventDefault()
     }
 
@@ -32,10 +32,10 @@ const CreateProduct = () => {
                 <label for='brand'>Brand: </label>
                 <br/>
                 <input type='text' id='brand' name='brand' value={form.brand} onChange={(event) => handleForm(event)}/>
-
-                <label for='image'>Image: </label>
+                
+                <label for='image'>Image: </label><br/>
+                <input type='text' alt='' id='image' name='image' value={form.image} onChange={(event) => handleForm(event)}/>
                 <br/>
-                <input type='image' alt='' id='image' name='image' value={form.image} onChange={(event) => handleForm(event)}/>
                 <button onClick={() => handleCreate()}>Submit</button>
             </form>
 

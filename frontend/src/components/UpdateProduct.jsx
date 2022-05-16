@@ -4,7 +4,7 @@ import { useState } from 'react'
 // import { useNavigate } from 'react-router-dom'
 
 
-const UpdateOrder = ({updateOrder}) => {
+const UpdateProduct = ({updateProduct}) => {
 
     // const navigate = useNavigate()
 
@@ -22,7 +22,7 @@ const UpdateOrder = ({updateOrder}) => {
     }
     const handleSubmit = async (e) => {
         e.preventDefault()
-        await axios.put(`${BASE_URL}/updateOrder/${updateOrder}`,{
+        await axios.put(`${BASE_URL}/updateProduct/${updateProduct}`,{
             quantity: quantity
         })
         window.location.reload(true)
@@ -30,7 +30,7 @@ const UpdateOrder = ({updateOrder}) => {
 
 
     return (
-        <div className='updateOrder'>
+        <div className='updateProduct'>
             {update ? 
                 <form onSubmit={handleSubmit}>
                     <input onChange={handleChange} type='integer' id={'quantity'} name={'quantity'} placeholder={'quantity'}/>
@@ -45,4 +45,4 @@ const UpdateOrder = ({updateOrder}) => {
 
     )
 }
-export default UpdateOrder
+export default UpdateProduct

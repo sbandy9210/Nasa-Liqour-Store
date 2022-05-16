@@ -35,9 +35,9 @@ Router.delete('/vendor/delete/:vendor_id', middleware.stripToken, middleware.ver
 // %%%%%%%%%%%%%% PRODUCTS ROUTE %%%%%%%%%%%%%%%%%%%%%%%%
 Router.get('/products', controller.GetAllProducts)
 
-Router.put('/products/update', middleware.stripToken, middleware.verifyToken, controller.UpdateProduct)
+Router.put('/products/update', controller.UpdateProduct)
 
-Router.post('/products/create', middleware.stripToken, middleware.verifyToken, controller.CreateProduct)
+Router.post('/products/create', controller.CreateProduct)
 
 Router.delete('/products/:id', controller.DeleteProduct)
 
