@@ -37,9 +37,13 @@
 .images {
     height: 150px;
     width: 150px;
-    justify-content: center;
+    flex-direction: center;
 }
 
+.orderImages {
+    height: 150px;
+    width: 150px;
+}
 .brand {
     
 }

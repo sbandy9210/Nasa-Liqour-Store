@@ -8,6 +8,7 @@ import Products from './pages/Products'
 import Orders from './pages/Orders'
 import Nav from './components/Nav'
 import Home from './pages/Home'
+import Search from './pages/Search'
 
 
 function App() {
@@ -26,6 +27,7 @@ function App() {
           <Route path='/register' element={<Register/>}/>
           <Route path='/products' element={<Products/>}/>
           <Route path='/home' element={<Home/>}/>
+          <Route path='/search' element={<Search/>}/>
         </Routes>
         
        

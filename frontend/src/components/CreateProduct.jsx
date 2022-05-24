@@ -29,12 +29,12 @@ const CreateProduct = () => {
         <div className='addNewProduct'>
             <h1>Add a new product</h1>
             <form action='/products'>
-                <label for='brand'>Brand: </label>
+                <label for='brand'></label>
                 <br/>
-                <input type='text' id='brand' name='brand' value={form.brand} onChange={(event) => handleForm(event)}/>
+                <input type='text' id='brand' placeholder='brand' name='brand' value={form.brand} onChange={(event) => handleForm(event)}/>
                 
-                <label for='image'>Image: </label><br/>
-                <input type='text' alt='' id='image' name='image' value={form.image} onChange={(event) => handleForm(event)}/>
+                <label for='image'></label><br/>
+                <input type='text' alt='' id='image' name='image' value={form.image} placeholder='image address goes here' onChange={(event) => handleForm(event)}/>
                 <br/>
                 <button onClick={() => handleCreate()}>Submit</button>
             </form>
@@ -46,3 +46,8 @@ const CreateProduct = () => {
 }
 
 export default CreateProduct
+
+
+
+// type of liquor
+// current stock amount of each product on products page
